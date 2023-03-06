@@ -1,0 +1,33 @@
+<div class=" mt-5">
+    <h1 class="mb-3 text-center">Add Nservice</h1>
+      <div class="submit-form">
+        <div *ngIf="!submitted">
+          <div class="form-group mb-3">
+            <label for="title" class="mb-2">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              required
+              [(ngModel)]="nservice.title"
+              name="title"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <label for="description" class="mb-2">Description</label>
+            <input
+              class="form-control"
+              id="description"
+              required
+              [(ngModel)]="nservice.description"
+              name="description"
+            />
+          </div>
+          <button (click)="saveNservice()" class="btn btn-success">Submit</button>
+        </div>
+        <div *ngIf="submitted">
+          <h4>Tutorial was submitted successfully!</h4>
+          <button class="btn btn-success" (click)="newNservice()">Add</button>
+        </div>
+      </div>
+    </div>
